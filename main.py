@@ -16,8 +16,9 @@ print (testing_get_drink_order)
 testing_get_drink_order = Menu.find_drink('cappuccino')
 print (testing_get_drink_order)
 
-
-
+# test print coffee maker report on its resource levels
+coffee_machine = CoffeeMaker()
+print(coffee_machine.report())
 
 
 #
