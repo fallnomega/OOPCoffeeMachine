@@ -1,4 +1,5 @@
 class CoffeeMaker():
+    dummyvar = 0
 
 
 resources = {
