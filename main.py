@@ -3,6 +3,18 @@ from coffee_maker import CoffeeMaker
 from money_machine import MoneyMachine
 
 
+#testing things out
+testing_get_item = Menu()
+testing_get_item.get_items()
+print (f"What would you like? {testing_get_item.get_items()}")
+
+#test info on drink ordered
+testing_get_drink_order = Menu.find_drink('espresso')
+print (testing_get_drink_order)
+testing_get_drink_order = Menu.find_drink('latte')
+print (testing_get_drink_order)
+testing_get_drink_order = Menu.find_drink('cappuccino')
+print (testing_get_drink_order)
 
 
 

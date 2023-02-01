@@ -1,25 +1,22 @@
 class Menu():
-    # 1. Prompt user by asking “What would you like? (espresso/latte/cappuccino):”
-    def order_drink(self):
-        selection = input("What would you like?\n1 - Espresso\n2 - Latte\n3 - Cappuccino)"
-                          "\nUse 1, 2, or 3 for the selection: ")
-        # Turn off the Coffee Machine by entering “off” to the prompt.
-        if selection == 'off':
-            self.turn_off()
-        # Print report.
-        elif selection == 'report':
-            print_report()
-        elif int(selection) > 3:
-            print("\n\nWrong selection, try again\n\n")
-            exit()
-        else:
+    # Returns all the names of the available menu items as a concatenated string.
+    # e.g. “latte/espresso/cappuccino”
+    def get_items(self):
+        items = MenuItem()
+        items = '|'
+        for x in MenuItem.MENU:
+            items += ' ' + x + ' |'
+        return items
 
-            return selection
-
-    def turn_off():
-        print("\n\nTurning off the machine. Good bye!\n\n")
-        exit()
-        return
+    # Searches the menu for a particular drink by name. Returns a MenuItem object if it exists,
+    # otherwise returns None.
+    def find_drink(order_name):
+        drink_selected = {}
+        for x in MenuItem.MENU:
+            if x == order_name:
+                drink_selected[x] = MenuItem.MENU[x]
+                return drink_selected
+        return None
 
 
 class MenuItem():
@@ -48,18 +45,3 @@ class MenuItem():
             "cost": 3.0,
         }
     }
-
-
-turn_off_machine = False
-while turn_off_machine != True:
-    drink_choice = order_drink()
-    print_report()
-    # Check resources sufficient?
-    resource_check = check_resources_availability(drink_choice)
-    if resource_check == 0:
-        continue
-    process_coins(drink_choice)
-    make_coffee(drink_choice)
-    print_report()
-    print(f"Here is your {list(MENU)[int(drink_choice) - 1]}. Enjoy!")
-    turn_off()
