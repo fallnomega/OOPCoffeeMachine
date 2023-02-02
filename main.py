@@ -26,6 +26,8 @@ while not turn_off_machine:
         for x in customer_choice:
             payment.make_payment(customer_choice[x]['cost'])
         payment.report()
+        coffee_machine.make_coffee(customer_choice)
+        coffee_machine.report()
     turn_off_machine = True
 
 # 7. Make Coffee.

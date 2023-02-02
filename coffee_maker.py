@@ -69,8 +69,21 @@ class CoffeeMaker():
                 return 1
         return
 
+    # Parameter order: (MenuItem) The MenuItem object to make.
+    # Deducts the required ingredients from the resources
+    def make_coffee(self, order):
 
-# - make_coffee(order)
-# Parameter order: (MenuItem) The MenuItem object to make.
-# Deducts the required ingredients from the resources
-
+        if list(order.keys())[0] == 'espresso':
+            self.resources['water'] -= order['espresso']['ingredients']['water']
+            self.resources['coffee'] -= order['espresso']['ingredients']['coffee']
+            return
+        if list(order.keys())[0] == 'latte':
+            self.resources['water'] -= order['latte']['ingredients']['water']
+            self.resources['coffee'] -= order['latte']['ingredients']['coffee']
+            self.resources['milk'] -= order['latte']['ingredients']['milk']
+            return
+        else:
+            self.resources['water'] -= order['cappuccino']['ingredients']['water']
+            self.resources['coffee'] -= order['cappuccino']['ingredients']['coffee']
+            self.resources['milk'] -= order['cappuccino']['ingredients']['milk']
+            return

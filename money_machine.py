@@ -37,4 +37,3 @@ class MoneyMachine():
             else:
                 self.MONEY += cost
                 return True
-        return 0
