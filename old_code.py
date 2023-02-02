@@ -6,39 +6,39 @@ DIMES = .10
 NICKLES = .05
 PENNIES = .01
 
+#
+# # 1. Prompt user by asking “What would you like? (espresso/latte/cappuccino):”
+# def order_drink():
+#     selection = input("What would you like?\n1 - Espresso\n2 - Latte\n3 - Cappuccino)"
+#                       "\nUse 1, 2, or 3 for the selection: ")
+#     # Turn off the Coffee Machine by entering “off” to the prompt.
+#     if selection == 'off':
+#         turn_off()
+#     # Print report.
+#     elif selection == 'report':
+#         print_report()
+#     elif int(selection) > 3:
+#         print("\n\nWrong selection, try again\n\n")
+#         exit()
+#     else:
+#
+#         return selection
 
-# 1. Prompt user by asking “What would you like? (espresso/latte/cappuccino):”
-def order_drink():
-    selection = input("What would you like?\n1 - Espresso\n2 - Latte\n3 - Cappuccino)"
-                      "\nUse 1, 2, or 3 for the selection: ")
-    # Turn off the Coffee Machine by entering “off” to the prompt.
-    if selection == 'off':
-        turn_off()
-    # Print report.
-    elif selection == 'report':
-        print_report()
-    elif int(selection) > 3:
-        print("\n\nWrong selection, try again\n\n")
-        exit()
-    else:
-
-        return selection
-
-
-def turn_off():
-    print("\n\nTurning off the machine. Good bye!\n\n")
-    exit()
-    return
-
-
-def print_report():
-    print(f"\n\nReport on resource levels:\n"
-          f"Water: {resources['water']}m\n"
-          f"Milk: {resources['milk']}ml\n"
-          f"Coffee: {resources['coffee']}g\n"
-          f"Money: ${resources['money']}\n"
-          f"Profit: ${resources['money'] - 100}\n\n")
-    return
+#
+# def turn_off():
+#     print("\n\nTurning off the machine. Good bye!\n\n")
+#     exit()
+#     return
+#
+#
+# def print_report():
+#     print(f"\n\nReport on resource levels:\n"
+#           f"Water: {resources['water']}m\n"
+#           f"Milk: {resources['milk']}ml\n"
+#           f"Coffee: {resources['coffee']}g\n"
+#           f"Money: ${resources['money']}\n"
+#           f"Profit: ${resources['money'] - 100}\n\n")
+#     return
 
 
 def check_resources_availability(drink_to_check):

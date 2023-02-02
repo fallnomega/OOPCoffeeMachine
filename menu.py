@@ -10,7 +10,7 @@ class Menu():
 
     # Searches the menu for a particular drink by name. Returns a MenuItem object if it exists,
     # otherwise returns None.
-    def find_drink(order_name):
+    def find_drink(self, order_name):
         drink_selected = {}
         for x in MenuItem.MENU:
             if x == order_name:

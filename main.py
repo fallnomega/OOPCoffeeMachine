@@ -2,47 +2,38 @@ from menu import Menu, MenuItem
 from coffee_maker import CoffeeMaker
 from money_machine import MoneyMachine
 
+turn_off_machine = False
+while not turn_off_machine:
+    coffee_machine = CoffeeMaker()
+    get_item = Menu()
+    get_item.get_items()
+    # customer_choice = input(f"What would you like? {get_item.get_items()}: ")
+    customer_choice = 'latte'
 
-#testing things out
-testing_get_item = Menu()
-testing_get_item.get_items()
-print (f"What would you like? {testing_get_item.get_items()}")
+    if customer_choice == 'off':
+        print("\nShutting down. Goodbye!\n")
+        exit()
+    elif customer_choice == 'report':
+        coffee_machine.report()
+    elif get_item.find_drink(customer_choice) == None:
+        print("\n\nWrong selection, try again\n\n")
+        exit()
+    else:
+        customer_choice = get_item.find_drink(customer_choice)
+        if coffee_machine.is_resource_sufficient(customer_choice) == 0:
+            continue
+        payment = MoneyMachine()
+        print(customer_choice.items())
+        for x in customer_choice:
+            payment.make_payment(customer_choice[x]['cost'])
+    turn_off_machine = True
 
-#test info on drink ordered
-testing_get_drink_order = Menu.find_drink('espresso')
-print (testing_get_drink_order)
-testing_get_drink_order = Menu.find_drink('latte')
-print (testing_get_drink_order)
-testing_get_drink_order = Menu.find_drink('cappuccino')
-print (testing_get_drink_order)
-
-# test print coffee maker report on its resource levels
-coffee_machine = CoffeeMaker()
-print(coffee_machine.report())
 
 
-#
-# Coffee Machine Program Requirements
-# 1. Prompt user by asking “What would you like? (espresso/latte/cappuccino/):”
-# a. Check the user’s input to decide what to do next.
-# b. The prompt should show every time action has completed, e.g. once the drink is
-# dispensed. The prompt should show again to serve the next customer.
-# 2. Turn off the Coffee Machine by entering “off” to the prompt.
-# a. For maintainers of the coffee machine, they can use “off” as the secret word to turn off the
-# machine. Your code should end execution when this happens.
-# 3. Print report.
-# a. When the user enters “report” to the prompt, a report should be generated that shows the
-# current resource values. e.g.
-# Water: 100ml
-# Milk: 50ml
-# Coffee: 76g
-# Money: $2.5
-# 4. Check resources sufficient?
-# a. When the user chooses a drink, the program should check if there are enough resources
-# to make that drink.
-# b. E.g. if Latte requires 200ml water but there is only 100ml left in the machine. It should not
-# continue to make the drink but print: “Sorry there is not enough water.”
-# c. The same should happen if another resource is depleted, e.g. milk or coffee.
+
+
+
+
 # 5. Process coins.
 # a. If there are sufficient resources to make the drink selected, then the program should
 # prompt the user to insert coins.
@@ -80,3 +71,24 @@ print(coffee_machine.report())
 # was their choice of drink.
 
 
+
+    # test info on drink ordered
+    # testing_get_drink_order = Menu.find_drink('espresso')
+    # print(testing_get_drink_order)
+    # testing_get_drink_order = Menu.find_drink('latte')
+    # print(testing_get_drink_order)
+    # testing_get_drink_order = Menu.find_drink('cappuccino')
+    # print(testing_get_drink_order)
+
+    # test print coffee maker report on its resource levels
+
+    # print_report()
+    # # Check resources sufficient?
+    # resource_check = check_resources_availability(drink_choice)
+    # if resource_check == 0:
+    #     continue
+    # process_coins(drink_choice)
+    # make_coffee(drink_choice)
+    # print_report()
+    # print(f"Here is your {list(MENU)[int(drink_choice) - 1]}. Enjoy!")
+    # turn_off()
