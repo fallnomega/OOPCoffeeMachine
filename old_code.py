@@ -39,51 +39,51 @@ PENNIES = .01
 #           f"Money: ${resources['money']}\n"
 #           f"Profit: ${resources['money'] - 100}\n\n")
 #     return
-
-
-def check_resources_availability(drink_to_check):
-    # espresso check
-    if drink_to_check == '1':
-        print("Checking espresso resources.")
-        if int(resources['water']) < int(MENU['espresso']['ingredients']['water']):
-            print("Sorry there is not enough water.")
-            return 0
-        elif int(resources['coffee']) < int(MENU['espresso']['ingredients']['coffee']):
-            print("Sorry there is not enough coffee beans.")
-            return 0
-        else:
-            return 1
-
-    # latte check
-    if drink_to_check == '2':
-        print("Checking latte resources.")
-        if int(resources['water']) < int(MENU['latte']['ingredients']['water']):
-            print("Sorry there is not enough water.")
-            return 0
-        elif int(resources['milk']) < int(MENU['latte']['ingredients']['milk']):
-            print("Sorry there is not enough milk.")
-            return 0
-        elif int(resources['coffee']) < int(MENU['latte']['ingredients']['coffee']):
-            print("Sorry there is not enough coffee beans.")
-            return 0
-        else:
-            return 1
-
-    # Cappuccino check
-    if drink_to_check == '3':
-        print("Checking cappuccino resources.")
-        if int(resources['water']) < int(MENU['cappuccino']['ingredients']['water']):
-            print("Sorry there is not enough water.")
-            return 0
-        elif int(resources['milk']) < int(MENU['cappuccino']['ingredients']['milk']):
-            print("Sorry there is not enough milk.")
-            return 0
-        elif int(resources['coffee']) < int(MENU['cappuccino']['ingredients']['coffee']):
-            print("Sorry there is not enough coffee beans.")
-            return 0
-        else:
-            return 1
-    return
+#
+#
+# def check_resources_availability(drink_to_check):
+#     # espresso check
+#     if drink_to_check == '1':
+#         print("Checking espresso resources.")
+#         if int(resources['water']) < int(MENU['espresso']['ingredients']['water']):
+#             print("Sorry there is not enough water.")
+#             return 0
+#         elif int(resources['coffee']) < int(MENU['espresso']['ingredients']['coffee']):
+#             print("Sorry there is not enough coffee beans.")
+#             return 0
+#         else:
+#             return 1
+#
+#     # latte check
+#     if drink_to_check == '2':
+#         print("Checking latte resources.")
+#         if int(resources['water']) < int(MENU['latte']['ingredients']['water']):
+#             print("Sorry there is not enough water.")
+#             return 0
+#         elif int(resources['milk']) < int(MENU['latte']['ingredients']['milk']):
+#             print("Sorry there is not enough milk.")
+#             return 0
+#         elif int(resources['coffee']) < int(MENU['latte']['ingredients']['coffee']):
+#             print("Sorry there is not enough coffee beans.")
+#             return 0
+#         else:
+#             return 1
+#
+#     # Cappuccino check
+#     if drink_to_check == '3':
+#         print("Checking cappuccino resources.")
+#         if int(resources['water']) < int(MENU['cappuccino']['ingredients']['water']):
+#             print("Sorry there is not enough water.")
+#             return 0
+#         elif int(resources['milk']) < int(MENU['cappuccino']['ingredients']['milk']):
+#             print("Sorry there is not enough milk.")
+#             return 0
+#         elif int(resources['coffee']) < int(MENU['cappuccino']['ingredients']['coffee']):
+#             print("Sorry there is not enough coffee beans.")
+#             return 0
+#         else:
+#             return 1
+#     return
 
 
 # Process coins.
