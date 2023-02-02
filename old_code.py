@@ -1,10 +1,8 @@
-
-
-
 QUARTERS = .25
 DIMES = .10
 NICKLES = .05
 PENNIES = .01
+
 
 #
 # # 1. Prompt user by asking “What would you like? (espresso/latte/cappuccino):”

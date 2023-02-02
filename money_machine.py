@@ -7,7 +7,7 @@ class MoneyMachine():
 
     # Prints the current profit
     def report(self):
-        print (f"Profit so far: ${self.MONEY}\n\n")
+        print(f"Profit so far: ${self.MONEY}\n\n")
 
     # Returns True when payment is accepted, or False if insufficient.
     # e.g. False
