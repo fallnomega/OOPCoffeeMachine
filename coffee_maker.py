@@ -3,7 +3,6 @@ class CoffeeMaker():
         "water": 500,
         "milk": 200,
         "coffee": 100,
-        "money": 100
     }
 
     # Prints a report of all resources.
@@ -11,19 +10,12 @@ class CoffeeMaker():
         print(f"\n\nReport on resource levels:\n"
               f"Water: {self.resources['water']}m\n"
               f"Milk: {self.resources['milk']}ml\n"
-              f"Coffee: {self.resources['coffee']}g\n"
-              f"Money: ${self.resources['money']}\n"
-              f"Profit: ${self.resources['money'] - 100}\n\n")
+              f"Coffee: {self.resources['coffee']}g\n")
         return
 
     # Returns True when the drink order can be made, False if ingredients are insufficient.
     # e.g. True
     def is_resource_sufficient(self, drink):
-        # print (drink['espresso'])
-        # print(drink.keys())
-        # print(list(drink.keys())[0])
-        # print(type(drink))
-        # espresso check
         if list(drink.keys())[0] == 'espresso':
             print("Checking espresso resources.")
             if int(self.resources['water']) < int(drink['espresso']['ingredients']['water']):
